@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 	public PlayerOrientation _orientation;
 	public float _fireCooldown = 2.0f;
 
-	private float _internal = 0.0f;
+	private float _currentFireCooldown = 0.0f;
 
 	// Use this for initialization
 	void Start () 
@@ -51,8 +51,13 @@ public class PlayerController : MonoBehaviour
 		
 		if (Input.GetKeyUp (KeyCode.Return)) 
 		{
-			UnityEngine.Debug.Log("Fire!");
+			Fire();
 		}
+	}
+
+	private void Fire()
+	{
+		UnityEngine.Debug.Log("Fire!");
 	}
 	
 	private void GoForward() 
