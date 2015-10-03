@@ -8,7 +8,7 @@ public class Shooter : MonoBehaviour
     private GameObject[] bullets = new GameObject[20];
     private int iNext = 0;
     public float speed = 50.0f;
-	public float fireCooldown = 2.0f;	
+	public float fireCooldown = 0.5f;	
 	private float currentFireCooldown = 0.0f;
 
     void Start()
@@ -35,6 +35,8 @@ public class Shooter : MonoBehaviour
             go.transform.position = transform.position;
             go.transform.rotation = transform.rotation;
             go.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+
+			currentFireCooldown = fireCooldown;
         }
     }
 }

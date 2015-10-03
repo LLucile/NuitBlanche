@@ -26,10 +26,10 @@ GameObject:
   - 4: {fileID: 482952}
   - 54: {fileID: 5471920}
   - 195: {fileID: 19555236}
-  - 114: {fileID: 11454600}
-  - 114: {fileID: 11408788}
-  - 114: {fileID: 11456150}
-  - 114: {fileID: 11428514}
+  - 114: {fileID: 11419284}
+  - 114: {fileID: 11472568}
+  - 114: {fileID: 11495002}
+  - 136: {fileID: 13637404}
   m_Layer: 0
   m_Name: HumanEnemy
   m_TagString: Untagged
@@ -133,12 +133,12 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11408788
+--- !u!114 &11419284
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -150,19 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: .5
-  attackDamage: 10
---- !u!114 &11428514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 171112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045388bedc94125499f740a1b2f4412e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11454600
+  attackDamage: 3
+--- !u!114 &11472568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -173,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2fe8f33b20f114fa339ca7745d255b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11456150
+--- !u!114 &11495002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -181,12 +170,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 171112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c56e392fb35a984493c89f517619e0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1745c6bae44973c4ba9c24ba078503c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 10
   currentHealth: 0
   scoreValue: 1
+  deathClip: {fileID: 0}
 --- !u!136 &13615432
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -200,6 +190,19 @@ CapsuleCollider:
   m_Height: 1.10000002
   m_Direction: 1
   m_Center: {x: 0, y: .550000012, z: 0}
+--- !u!136 &13637404
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19555236
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -208,7 +211,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 171112}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -226,7 +229,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: attackDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171112}
