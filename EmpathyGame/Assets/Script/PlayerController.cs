@@ -62,12 +62,12 @@ public class PlayerController : MonoBehaviour
 	
 	private void GoForward() 
 	{
-		this.transform.Translate(Vector3.forward * Time.deltaTime);
+		this.transform.Translate(Vector3.forward *2* Time.deltaTime);
 	}
 	
 	private void GoBackward() 
 	{
-		this.transform.Translate(-Vector3.forward * Time.deltaTime);
+		this.transform.Translate(-Vector3.forward *2* Time.deltaTime);
 	}
 
 	private void TurnRight() 
