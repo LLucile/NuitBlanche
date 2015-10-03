@@ -1802,10 +1802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6f6b15e3aeff44e97e4cbcd01afb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frozen: 0
-  frozenTime: 3
-  playerOnePlayingTime: 0
-  playerTwoPlayingTime: 0
 --- !u!1 &2130892241
 GameObject:
   m_ObjectHideFlags: 0
