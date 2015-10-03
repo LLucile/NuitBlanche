@@ -215,7 +215,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 134802931}
   m_Enabled: 1
   m_Radius: .300000012
-  m_Speed: 3
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1615,8 +1615,8 @@ GameObject:
   - 23: {fileID: 1678105059}
   - 114: {fileID: 1678105058}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
