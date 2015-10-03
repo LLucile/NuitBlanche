@@ -14,9 +14,9 @@ public class TimeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        cTime = Time.realtimeSinceStartup;
-        int min = (int)Time.time / 60;
-        int sec = (int)Time.time % 60;
+        cTime = Time.timeSinceLevelLoad;
+        int min = (int)cTime / 60;
+        int sec = (int)cTime % 60;
         text.text = "TIME : " + min + " \'\'" + sec;
 	}
 }

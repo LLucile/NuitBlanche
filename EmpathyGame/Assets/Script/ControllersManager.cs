@@ -43,7 +43,7 @@ public class ControllersManager : MonoBehaviour {
             (XCI.GetButton(XboxButton.A, 1) || XCI.GetButton(XboxButton.B, 1) || XCI.GetButton(XboxButton.Y, 1) || XCI.GetButton(XboxButton.X, 1) || XCI.GetButton(XboxButton.Start, 1) || XCI.GetButton(XboxButton.LeftStick, 1) || XCI.GetButton(XboxButton.RightStick, 1) || XCI.GetButton(XboxButton.LeftBumper, 1) || XCI.GetButton(XboxButton.RightBumper, 1) ||
             XCI.GetDPad(XboxDPad.Left, 1) || (bool) XCI.GetDPad(XboxDPad.Right, 1) || (bool) XCI.GetDPad(XboxDPad.Up, 1) || XCI.GetDPad(XboxDPad.Down, 1) ||
             XCI.GetAxis(XboxAxis.LeftTrigger, 1) != 0 || XCI.GetAxis(XboxAxis.RightTrigger, 1) != 0 || XCI.GetAxis(XboxAxis.LeftStickY, 1) !=0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) !=0 || XCI.GetAxis(XboxAxis.RightStickY, 1) !=0 || XCI.GetAxis(XboxAxis.RightStickX, 1) !=0 ||
-            Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+            Input.GetKey(KeyCode.Enter) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
             )
         {
             playerTurn = 1;
