@@ -8,7 +8,8 @@ public class Shooter : MonoBehaviour
     private GameObject[] bullets = new GameObject[20];
     private int iNext = 0;
     public float speed = 50.0f;
-    public float timer = 0; //TODO implémenter un timer pour pouvoir retirer à nouveau
+	public float fireCooldown = 2.0f;	
+	private float currentFireCooldown = 0.0f;
 
     void Start()
     {
@@ -20,8 +21,12 @@ public class Shooter : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+	{
+		if (currentFireCooldown > 0.0f) 
+		{
+			currentFireCooldown -=  Time.deltaTime;
+		}
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject go = bullets[iNext++];
             if (iNext >= bullets.Length) iNext = 0;
