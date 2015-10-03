@@ -7,6 +7,7 @@ public class Health : MonoBehaviour {
 	public int currentHealth;
 	public int scoreValue = 1;	
 	public AudioClip deathClip;
+    public bool damaged;
 	
 	//Animator anim;
 	//AudioSource enemyAudio;
@@ -51,6 +52,7 @@ public class Health : MonoBehaviour {
 	
 	public void TakeDamage(int amount, Vector3 hitPoint)
 	{
+        damaged = true;
 		if (isDead) return;
 		// enemyAudio.Play();
 		//TODO add a hit animation, (blinking would be enough)
