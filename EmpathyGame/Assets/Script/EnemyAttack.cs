@@ -4,7 +4,8 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour {
 
     public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 10;
+	public int attackDamage = 10;
+	public AudioClip attackClip;
 
     Animator anim;
     GameObject player;
@@ -13,9 +14,11 @@ public class EnemyAttack : MonoBehaviour {
     bool playerInRange;
     float timer;
 	Vector3 collisionPoint;
+	AudioSource enemyAudio;
 
 	// Use this for initialization
 	void Awake () {
+		enemyAudio = GetComponent <AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
 		playerHealth = player.GetComponent<Health>();
 		enemyHealth  = GetComponent<Health>();
@@ -55,11 +58,13 @@ public class EnemyAttack : MonoBehaviour {
 	}
 
     void Attack(Vector3 collisionPoint)
-    {
+	{
         timer = 0f;
         if (playerHealth.currentHealth > 0)
         {
-            //Send damages to player
+			//Send damages to player
+			enemyAudio.clip = attackClip;
+			enemyAudio.Play ();
 			playerHealth.TakeDamage(attackDamage, collisionPoint);
         }
     }

@@ -5,7 +5,7 @@ public class EnemyManager : MonoBehaviour {
 
     //public PlayerHealth;
     public GameObject enemy;
-    public float initSpawnTime = 3f;
+    public float initSpawnTime = 15f;
     private float spawnTime;
     public Transform[] spawnPoints;
     private float timer = 0f;
@@ -27,7 +27,7 @@ public class EnemyManager : MonoBehaviour {
             Invoke("Spawn", 3f);
             timer = 0;
         }
-        if (Time.timeSinceLevelLoad / 3 > i)
+        if (Time.timeSinceLevelLoad / 30 > i)
         {
             i++;
             spawnTime -= 1;

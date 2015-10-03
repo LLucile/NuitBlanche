@@ -6,10 +6,11 @@ public class Health : MonoBehaviour {
 	public int startingHealth = 3;
 	public int currentHealth;
 	public int scoreValue = 1;	
+	public AudioClip hitClip;
 	public AudioClip deathClip;
 	
 	//Animator anim;
-	//AudioSource enemyAudio;
+	AudioSource enemyAudio;
 	ParticleSystem hitParticles;
 	CapsuleCollider capsuleCollider;
 	bool isDead;
@@ -18,7 +19,7 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		//anim = GetComponent <Animator>();
-		//enemyAudio = GetComponent <AudioSource>();
+		enemyAudio = GetComponent <AudioSource>();
 		hitParticles = GetComponentInChildren<ParticleSystem>();
 		capsuleCollider = GetComponent<CapsuleCollider>();
 		
@@ -38,6 +39,7 @@ public class Health : MonoBehaviour {
         gameObject.layer = LayerMask.NameToLayer("Dead");
         GetComponent <NavMeshAgent>().enabled = false;
 		GetComponent <Rigidbody>().isKinematic = true;
+		enemyAudio.PlayOneShot (deathClip);
         if (hitParticles != null)
         {
             hitParticles.transform.position = gameObject.transform.position;
@@ -45,15 +47,13 @@ public class Health : MonoBehaviour {
             Debug.Log("particles triggered");
         }
 		isDisappearing = true;
-		Destroy(gameObject, 2f);
-		
+		Destroy(gameObject, deathClip.length);		
 	}
 	
 	public void TakeDamage(int amount, Vector3 hitPoint)
 	{
 		if (isDead) return;
-		// enemyAudio.Play();
-		//TODO add a hit animation, (blinking would be enough)
+		enemyAudio.PlayOneShot (hitClip);
 		currentHealth -= amount;
 		if (currentHealth <= 0)
 		{
@@ -67,7 +67,5 @@ public class Health : MonoBehaviour {
 		capsuleCollider.isTrigger = true;
 		Debug.Log ("arg!");
         StartDisappear();
-		//change apparence
-		//enemyAudio.clip = deathClip;
 	}
 }
