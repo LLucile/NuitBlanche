@@ -9,7 +9,7 @@ public class Shooter : MonoBehaviour
 	public float fireCooldown = 0.5f;	
     public int damagePerHit = 10;
 	public float range = 100f;
-	public AudioClip shootClip;
+	public AudioClip[] shootClip;
 
 	private AudioSource audioSource;
 	private float currentFireCooldown = 0.0f;
@@ -57,6 +57,9 @@ public class Shooter : MonoBehaviour
 			bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
 			bullet_fired.GetComponent<Bullet>().ResetTimer();
         }
-		audioSource.PlayOneShot (shootClip);
+		if ((shootClip != null) && (shootClip.Length > 0)) 
+		{
+			audioSource.PlayOneShot(shootClip[UnityEngine.Random.Range(0, shootClip.Length)]);
+		}
     }
 }
