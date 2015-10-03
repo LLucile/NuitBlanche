@@ -42,6 +42,7 @@ public class Health : MonoBehaviour {
         {
             hitParticles.transform.position = gameObject.transform.position;
             hitParticles.Play();
+            Debug.Log("particles triggered");
         }
 		isDisappearing = true;
 		Destroy(gameObject, 2f);

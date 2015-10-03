@@ -5,17 +5,34 @@ public class EnemyManager : MonoBehaviour {
 
     //public PlayerHealth;
     public GameObject enemy;
-    public float spawnTime = 3f;
+    public float initSpawnTime = 3f;
+    private float spawnTime;
     public Transform[] spawnPoints;
+    private float timer = 0f;
+    private int i = 1;
 
 	Health playerHealth;
 	// Use this for initialization
 	void Start () {
+        spawnTime = initSpawnTime;
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		playerHealth = player.GetComponent<Health>();
-		InvokeRepeating("Spawn", spawnTime, spawnTime);
+		//InvokeRepeating("Spawn", spawnTime, spawnTime);
 	}
-
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > spawnTime)
+        {
+            Invoke("Spawn", 3f);
+            timer = 0;
+        }
+        if (Time.timeSinceLevelLoad / 3 > i)
+        {
+            i++;
+            spawnTime -= 1;
+        }
+    }
     void Spawn()
     {
         if(playerHealth.currentHealth <= 0)
