@@ -12,23 +12,26 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetAxis ("Vertical") > 0) 
-		{
-			GoForward();
-		}
-		else if (Input.GetAxis ("Vertical") < 0) 
-		{
-			GoBackward();
-		}		
-		
-		if (Input.GetAxis ("Horizontal") > 0) 
-		{
-			TurnLeft();
-		}
-		else if (Input.GetAxis ("Horizontal") < 0) 
-		{
-			TurnRight();
-		}	
+        if (!GetComponent<ControllersManager>().frozen)
+        {
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                GoForward();
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                GoBackward();
+            }
+
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                TurnLeft();
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                TurnRight();
+            }
+        }
 	}
 	
 	private void GoForward() 
