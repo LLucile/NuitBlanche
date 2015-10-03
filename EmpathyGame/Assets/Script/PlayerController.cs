@@ -15,20 +15,20 @@ public class PlayerController : MonoBehaviour
 	{
         if (!GetComponent<ControllersManager>().frozen)
         {
-            if (Input.GetAxis("Vertical") > 0 || XCI.GetAxis(XboxAxis.LeftStickY, 1) > 0)
+            if (Input.GetAxis("Vertical") > 0 || XCI.GetAxis(XboxAxis.LeftStickY, 1) > 0 || XCI.GetAxis(XboxAxis.LeftStickY, 2) > 0)
             {
                 GoForward();
             }
-            else if (Input.GetAxis("Vertical") < 0  || XCI.GetAxis(XboxAxis.LeftStickY, 1) < 0)
+            else if (Input.GetAxis("Vertical") < 0 || XCI.GetAxis(XboxAxis.LeftStickY, 1) < 0 || XCI.GetAxis(XboxAxis.LeftStickY, 2) < 0)
             {
                 GoBackward();
             }
 
-            if (Input.GetAxis("Horizontal") > 0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) > 0)
+            if (Input.GetAxis("Horizontal") > 0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) > 0 || XCI.GetAxis(XboxAxis.LeftStickX, 2) > 0)
             {
                 TurnLeft();
             }
-            else if (Input.GetAxis("Horizontal") < 0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) < 0)
+            else if (Input.GetAxis("Horizontal") < 0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) < 0 || XCI.GetAxis(XboxAxis.LeftStickX, 1) < 0)
             {
                 TurnRight();
             }
