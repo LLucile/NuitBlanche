@@ -567,6 +567,10 @@ Prefab:
       propertyPath: spawnPoints.Array.data[2]
       value: 
       objectReference: {fileID: 638577199}
+    - target: {fileID: 11494022, guid: efc925305f957504395b7f5067935b3a, type: 2}
+      propertyPath: spawnTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efc925305f957504395b7f5067935b3a, type: 2}
   m_IsPrefabParent: 0

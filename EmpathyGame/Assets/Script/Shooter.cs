@@ -35,19 +35,7 @@ public class Shooter : MonoBehaviour
 		}
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-<<<<<<< HEAD
             Shoot();
-=======
-            GameObject go = bullets[iNext++];
-            if (iNext >= bullets.Length) iNext = 0;
-            go.SetActive(true);
-            go.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            go.transform.position = transform.position;
-            go.transform.rotation = transform.rotation;
-            go.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-
-			currentFireCooldown = fireCooldown;
->>>>>>> origin/master
         }
     }
 
@@ -55,10 +43,13 @@ public class Shooter : MonoBehaviour
     {
         GameObject bullet_fired = bullets[iNext++];
         if (iNext >= bullets.Length) iNext = 0;
-        bullet_fired.SetActive(true);
-        bullet_fired.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        bullet_fired.transform.position = transform.position;
-        bullet_fired.transform.rotation = transform.rotation;
-        bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        if (bullet_fired != null)
+        {
+            bullet_fired.SetActive(true);
+            bullet_fired.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            bullet_fired.transform.position = transform.position;
+            bullet_fired.transform.rotation = transform.rotation;
+            bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 
-	public int startingHealth = 10;
+	public int startingHealth = 3;
 	public int currentHealth;
 	public int scoreValue = 1;	
 	public AudioClip deathClip;
@@ -64,6 +64,7 @@ public class Health : MonoBehaviour {
 		isDead = true;
 		capsuleCollider.isTrigger = true;
 		Debug.Log ("arg!");
+        StartDisappear();
 		//change apparence
 		//enemyAudio.clip = deathClip;
 	}
