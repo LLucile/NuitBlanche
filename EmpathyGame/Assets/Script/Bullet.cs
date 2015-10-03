@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
 		if (health != null) 
 		{
 			health.TakeDamage(damage, collision.contacts[0].normal);
-			GameObject.Destroy(gameObject, 0.5f);
+			gameObject.SetActive(false);
 		}
 	}
 }
