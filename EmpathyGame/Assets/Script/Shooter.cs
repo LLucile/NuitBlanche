@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XboxCtrlrInput;
 
 public class Shooter : MonoBehaviour
 {
@@ -32,14 +33,23 @@ public class Shooter : MonoBehaviour
 
     void Update()
 	{
-
-		if (currentFireCooldown > 0.0f) 
-		{
-			currentFireCooldown -=  Time.deltaTime;
-		}
-        else if (Input.GetKeyDown(KeyCode.Space))
+        if ( !GetComponentInParent<ControllersManager>().frozen )
         {
-            Shoot();
+            if (currentFireCooldown > 0.0f)
+            {
+                currentFireCooldown -= Time.deltaTime;
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) || XCI.GetButton(XboxButton.A, 1) || XCI.GetButton(XboxButton.B, 1) || XCI.GetButton(XboxButton.Y, 1) || XCI.GetButton(XboxButton.X, 1) || XCI.GetButton(XboxButton.Start, 1) || XCI.GetButton(XboxButton.LeftStick, 1) || XCI.GetButton(XboxButton.RightStick, 1) || XCI.GetButton(XboxButton.LeftBumper, 1) || XCI.GetButton(XboxButton.RightBumper, 1) ||
+                XCI.GetDPad(XboxDPad.Left, 1) || (bool)XCI.GetDPad(XboxDPad.Right, 1) || (bool)XCI.GetDPad(XboxDPad.Up, 1) || XCI.GetDPad(XboxDPad.Down, 1) || XCI.GetAxis(XboxAxis.LeftTrigger) != 0 || XCI.GetAxis(XboxAxis.RightTrigger, 1) != 0 || Input.GetKeyDown(KeyCode.RightShift) || XCI.GetButton(XboxButton.A, 2) || XCI.GetButton(XboxButton.B, 2) || XCI.GetButton(XboxButton.Y, 2) || XCI.GetButton(XboxButton.X, 2) || XCI.GetButton(XboxButton.Start, 2) || XCI.GetButton(XboxButton.LeftStick, 2) || XCI.GetButton(XboxButton.RightStick, 2) || XCI.GetButton(XboxButton.LeftBumper, 2) || XCI.GetButton(XboxButton.RightBumper, 2) ||
+                XCI.GetDPad(XboxDPad.Left, 2) || (bool)XCI.GetDPad(XboxDPad.Right, 2) || (bool)XCI.GetDPad(XboxDPad.Up, 2) || XCI.GetDPad(XboxDPad.Down, 2) ||
+                XCI.GetAxis(XboxAxis.LeftTrigger) != 0 || XCI.GetAxis(XboxAxis.RightTrigger, 2) != 0)
+            {
+                Shoot();
+            }
+        }
+        else
+        {
+            Debug.Log("FROZEN !!!");
         }
     }
 

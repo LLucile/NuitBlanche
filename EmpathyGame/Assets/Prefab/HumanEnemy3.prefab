@@ -185,6 +185,7 @@ AudioSource:
   m_Pitch: .560000002
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 0
   DopplerLevel: 1
   MinDistance: 1
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1745c6bae44973c4ba9c24ba078503c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 50
   currentHealth: 0
   scoreValue: 1
   hitClip: {fileID: 8300000, guid: 050ab8460af86764ab2ad6cf91e8480a, type: 3}
@@ -1434,7 +1435,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117778}
