@@ -39,8 +39,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b999ada0eaa8ff4dbffe16fcdeda3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 171112, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
-  spawnTime: 3
+  enemy:
+  - {fileID: 147526, guid: bdfa437cf7a06c04f95e477619649ac5, type: 2}
+  - {fileID: 173290, guid: ec938966a59f64a499296b2321975530, type: 2}
+  - {fileID: 117778, guid: 62455ffc9facc484a9b4904708ef666c, type: 2}
+  initSpawnTime: 15
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -54,6 +57,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: enemy.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -65,6 +72,18 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 171112, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 147526, guid: bdfa437cf7a06c04f95e477619649ac5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 173290, guid: ec938966a59f64a499296b2321975530, type: 2}
+    - target: {fileID: 0}
+      propertyPath: enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 117778, guid: 62455ffc9facc484a9b4904708ef666c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132284}
