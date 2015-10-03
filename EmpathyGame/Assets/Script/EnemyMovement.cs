@@ -3,14 +3,13 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
-    Transform Player;
+    Transform player;
     //PlayerHealth playerHealth;
     Health enemyHealth;
     NavMeshAgent nav;
 
 	// Use this for initialization
 	void Awake () {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
         //playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent <Health>();
         nav = GetComponent<NavMeshAgent>();
@@ -20,13 +19,16 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(enemyHealth.currentHealth > 0  /*&& playerHealth.currentHealth > 0*/)
-        {
-        nav.SetDestination(Player.position);
+        {			
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			if (player != null)
+			{
+				nav.SetDestination(player.transform.position);
+			}
         }
         else
         {
-         nav.enabled = false;
-        }
-	
+        	nav.enabled = false;
+        }	
 	}
 }

@@ -130,6 +130,14 @@ Prefab:
       propertyPath: fireCooldown
       value: .300000012
       objectReference: {fileID: 0}
+    - target: {fileID: 11406926, guid: e68b4dba6f06a6e4e932f892286e49f9, type: 2}
+      propertyPath: startingHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 466108, guid: e68b4dba6f06a6e4e932f892286e49f9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.115999997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e68b4dba6f06a6e4e932f892286e49f9, type: 2}
   m_IsPrefabParent: 0

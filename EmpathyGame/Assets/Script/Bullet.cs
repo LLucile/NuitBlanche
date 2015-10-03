@@ -13,17 +13,22 @@ public class Bullet : MonoBehaviour
         timer = 0;
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Dead"), true);
 	}
+
+	public void ResetTimer()
+	{
+		timer = 0;
+	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
         timer = timer + Time.deltaTime;
         if (timer > bulletLifeTime)
-        {
-            GameObject.Destroy(gameObject);
-        }
+		{
+			gameObject.SetActive(false);
+		}
 	}
-
+	
 	void OnCollisionEnter(Collision collision) 
 	{
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Shootable"))
@@ -37,7 +42,6 @@ public class Bullet : MonoBehaviour
                 health.TakeDamage(damage, collision.contacts[0].normal);
                 gameObject.SetActive(false);
             }
-            GameObject.Destroy(gameObject);
         }
 	}
 }

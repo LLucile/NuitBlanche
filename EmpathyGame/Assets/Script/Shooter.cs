@@ -43,13 +43,15 @@ public class Shooter : MonoBehaviour
     {
         GameObject bullet_fired = bullets[iNext++];
         if (iNext >= bullets.Length) iNext = 0;
+		Debug.Log ("fire : " + iNext);
         if (bullet_fired != null)
         {
             bullet_fired.SetActive(true);
             bullet_fired.GetComponent<Rigidbody>().velocity = Vector3.zero;
             bullet_fired.transform.position = transform.position;
             bullet_fired.transform.rotation = transform.rotation;
-            bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+			bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+			bullet_fired.GetComponent<Bullet>().ResetTimer();
         }
     }
 }
