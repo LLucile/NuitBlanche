@@ -35,7 +35,8 @@ public class Health : MonoBehaviour {
 	
 	void StartDisappear()
 	{
-		GetComponent <NavMeshAgent>().enabled = false;
+        gameObject.layer = LayerMask.NameToLayer("Dead");
+        GetComponent <NavMeshAgent>().enabled = false;
 		GetComponent <Rigidbody>().isKinematic = true;
 		isDisappearing = true;
 		Destroy(gameObject, 2f);

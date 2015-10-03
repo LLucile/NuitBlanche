@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Dead"), true);	
 	}
 	
 	// Update is called once per frame

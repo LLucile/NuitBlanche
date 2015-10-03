@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
 	void Start () 
 	{
         timer = 0;
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Dead"), true);
 	}
 	
 	// Update is called once per frame
@@ -25,15 +26,18 @@ public class Bullet : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision) 
 	{
-		GameObject go = collision.gameObject;
-		Health health = go.GetComponent<Health>();
-		Debug.Log ("Hit!");
-		
-		if (health != null) 
-		{
-			health.TakeDamage(damage, collision.contacts[0].normal);
-			gameObject.SetActive(false);
-		}
-        GameObject.Destroy(gameObject);
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        {
+            GameObject go = collision.gameObject;
+            Health health = go.GetComponent<Health>();
+            Debug.Log("Hit!");
+
+            if (health != null)
+            {
+                health.TakeDamage(damage, collision.contacts[0].normal);
+                gameObject.SetActive(false);
+            }
+            GameObject.Destroy(gameObject);
+        }
 	}
 }

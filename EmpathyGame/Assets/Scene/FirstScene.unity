@@ -617,6 +617,18 @@ Prefab:
       propertyPath: m_Radius
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 199610, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 171112, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 120912, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11428514, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 404cec8e062039c40828dc6ab0dc18a5, type: 2}
