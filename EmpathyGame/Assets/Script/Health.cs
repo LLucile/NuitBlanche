@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
+public class Health : MonoBehaviour {
+
 	public int startingHealth = 10;
 	public int currentHealth;
-	public int scoreValue = 1;
-	
-	//public AudioClip deathClip;
+	public int scoreValue = 1;	
+	public AudioClip deathClip;
 	
 	//Animator anim;
 	//AudioSource enemyAudio;
@@ -48,8 +48,11 @@ public class PlayerHealth : MonoBehaviour {
 		// enemyAudio.Play();
 		
 		currentHealth -= amount;
-		hitParticles.transform.position = hitPoint;
-		hitParticles.Play();
+		if (hitParticles != null) 
+		{
+			hitParticles.transform.position = hitPoint;
+			hitParticles.Play ();
+		}
 		if (currentHealth <= 0)
 		{
 			Death();
@@ -60,6 +63,7 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		isDead = true;
 		capsuleCollider.isTrigger = true;
+		Debug.Log ("arg!");
 		//change apparence
 		//enemyAudio.clip = deathClip;
 	}

@@ -8,7 +8,7 @@ public class Shooter : MonoBehaviour
     private GameObject[] bullets = new GameObject[20];
     private int iNext = 0;
     public float speed = 50.0f;
-	public float fireCooldown = 2.0f;	
+	public float fireCooldown = 0.5f;	
 	private float currentFireCooldown = 0.0f;
     public int damagePerHit = 10;
     public float range = 100f;
@@ -35,7 +35,19 @@ public class Shooter : MonoBehaviour
 		}
         else if (Input.GetKeyDown(KeyCode.Space))
         {
+<<<<<<< HEAD
             Shoot();
+=======
+            GameObject go = bullets[iNext++];
+            if (iNext >= bullets.Length) iNext = 0;
+            go.SetActive(true);
+            go.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            go.transform.position = transform.position;
+            go.transform.rotation = transform.rotation;
+            go.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+
+			currentFireCooldown = fireCooldown;
+>>>>>>> origin/master
         }
     }
 

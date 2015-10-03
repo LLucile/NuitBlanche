@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnnemyMovement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour {
 
     Transform Player;
     //PlayerHealth playerHealth;
