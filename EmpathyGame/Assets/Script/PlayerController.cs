@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour 
 {
-
 	public enum PlayerOrientation 
 	{
 		North = 0,
@@ -15,7 +14,8 @@ public class PlayerController : MonoBehaviour
 		West = 270,
 		NorthWest = 315,	
 	}
-
+	
+	public GameObject _bulletPrefab;
 	public PlayerOrientation _orientation;
 	public float _fireCooldown = 2.0f;
 
@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (_currentFireCooldown > 0.0f) 
+		{
+			_currentFireCooldown -=  Time.deltaTime;
+		}
+
 		if (Input.GetAxis ("Vertical") > 0) 
 		{
 			GoForward();
@@ -57,7 +62,17 @@ public class PlayerController : MonoBehaviour
 
 	private void Fire()
 	{
-		UnityEngine.Debug.Log("Fire!");
+		if (_currentFireCooldown <= 0.0f) {
+			UnityEngine.Debug.Log ("Fire!");
+			_currentFireCooldown = _fireCooldown;
+			/*
+			GameObject.Instantiate(_bulletPrefab, transform.position + transform.forward,
+			            Quaternion.LookRotation(trans));
+			            */
+		} else 
+		{
+			UnityEngine.Debug.Log ("OnCoolDown!");
+		}
 	}
 	
 	private void GoForward() 
