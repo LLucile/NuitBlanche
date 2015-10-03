@@ -40,7 +40,11 @@ public class Health : MonoBehaviour {
         gameObject.layer = LayerMask.NameToLayer("Dead");
         GetComponent <NavMeshAgent>().enabled = false;
 		GetComponent <Rigidbody>().isKinematic = true;
-		enemyAudio.PlayOneShot (deathClip);
+        if (!enemyAudio.isPlaying)
+        {
+
+            enemyAudio.PlayOneShot(deathClip);
+        }
         if (hitParticles != null)
         {
             hitParticles.transform.position = gameObject.transform.position;
@@ -55,7 +59,11 @@ public class Health : MonoBehaviour {
 	{
         damaged = true;
 		if (isDead) return;
-		enemyAudio.PlayOneShot (hitClip);
+        if (!enemyAudio.isPlaying)
+        {
+            enemyAudio.PlayOneShot(hitClip);
+        }
+
 		currentHealth -= amount;
 		if (currentHealth <= 0)
 		{
