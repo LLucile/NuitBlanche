@@ -5,19 +5,23 @@ public class Shooter : MonoBehaviour
 {
 
     public GameObject bulletPrefab;
-    private GameObject[] bullets = new GameObject[20];
-    private int iNext = 0;
     public float speed = 50.0f;
 	public float fireCooldown = 0.5f;	
-	private float currentFireCooldown = 0.0f;
     public int damagePerHit = 10;
-    public float range = 100f;
+	public float range = 100f;
+	public AudioClip shootClip;
+
+	private AudioSource audioSource;
+	private float currentFireCooldown = 0.0f;
+	private GameObject[] bullets = new GameObject[20];
+	private int iNext = 0;
 
     int shootableMask;
 
 
     void Awake()
     {
+		audioSource = GetComponentInParent<AudioSource> ();
         shootableMask = LayerMask.GetMask("Shootable");
         for (int i = 0; i < bullets.Length; i++)
         {
@@ -53,5 +57,6 @@ public class Shooter : MonoBehaviour
 			bullet_fired.GetComponent<Rigidbody>().AddForce(transform.forward * speed);
 			bullet_fired.GetComponent<Bullet>().ResetTimer();
         }
+		audioSource.PlayOneShot (shootClip);
     }
 }
