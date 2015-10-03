@@ -38,6 +38,11 @@ public class Health : MonoBehaviour {
         gameObject.layer = LayerMask.NameToLayer("Dead");
         GetComponent <NavMeshAgent>().enabled = false;
 		GetComponent <Rigidbody>().isKinematic = true;
+        if (hitParticles != null)
+        {
+            hitParticles.transform.position = gameObject.transform.position;
+            hitParticles.Play();
+        }
 		isDisappearing = true;
 		Destroy(gameObject, 2f);
 		
@@ -47,13 +52,8 @@ public class Health : MonoBehaviour {
 	{
 		if (isDead) return;
 		// enemyAudio.Play();
-		
+		//TODO add a hit animation, (blinking would be enough)
 		currentHealth -= amount;
-		if (hitParticles != null) 
-		{
-			hitParticles.transform.position = hitPoint;
-			hitParticles.Play ();
-		}
 		if (currentHealth <= 0)
 		{
 			Death();
