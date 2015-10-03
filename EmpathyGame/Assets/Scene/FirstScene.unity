@@ -85,6 +85,56 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 73be9f03071b76747b17076de2510293, type: 2}
+--- !u!1001 &113451123
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.010105134
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.74117383e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .784154952
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422512, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474662, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: damageImage
+      value: 
+      objectReference: {fileID: 1343141691}
+    - target: {fileID: 11474662, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 461417599}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 52f372ca396ecee46ab54497a86ff1e3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &226161533
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,64 +258,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 455574, guid: ed3d93f15776e564bab6bcfa1c87cf08, type: 2}
   m_PrefabInternal: {fileID: 286673887}
---- !u!1001 &302563968
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.09258413
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.46328497e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.10936487
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 499198, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 154118, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: m_Name
-      value: PlayerAlien
-      objectReference: {fileID: 0}
-    - target: {fileID: 11439750, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: damageImage
-      value: 
-      objectReference: {fileID: 1343141691}
-    - target: {fileID: 11439750, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 461417599}
-    - target: {fileID: 11473492, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-      propertyPath: startingHealth
-      value: 100
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 360279fd953beea45a5dd4d30940e180, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &356345086
 GameObject:
   m_ObjectHideFlags: 0
