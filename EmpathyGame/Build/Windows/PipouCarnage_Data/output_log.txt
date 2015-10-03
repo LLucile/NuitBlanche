@@ -23,15 +23,15 @@ Loading D:\Lucile\Hackatons\NuitBlanche\NuitBlanche\EmpathyGame\Build\Windows\Pi
 Platform assembly: D:\Lucile\Hackatons\NuitBlanche\NuitBlanche\EmpathyGame\Build\Windows\PipouCarnage_Data\Managed\XInputDotNetPure.dll (this message is harmless)
 Loading D:\Lucile\Hackatons\NuitBlanche\NuitBlanche\EmpathyGame\Build\Windows\PipouCarnage_Data\Managed\XInputDotNetPure.dll into Unity Child Domain
 Platform assembly: D:\Lucile\Hackatons\NuitBlanche\NuitBlanche\EmpathyGame\Build\Windows\PipouCarnage_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.050 seconds
+- Completed reload, in  0.049 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: D:\Lucile\Hackatons\NuitBlanche\NuitBlanche\EmpathyGame\Build\Windows\PipouCarnage_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3310 -> priority: 1 
-  Thread -> id: 1838 -> priority: 1 
+  Thread -> id: 150 -> priority: 1 
+  Thread -> id: 300c -> priority: 1 
 fire : 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
@@ -65,6 +65,14 @@ fire : 8
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 fire : 9
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+fire : 10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+fire : 11
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
